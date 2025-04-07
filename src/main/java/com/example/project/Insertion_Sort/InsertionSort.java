@@ -29,16 +29,16 @@ public class InsertionSort {
         int count = 0;
         for (int i = 0; i < elements.length - 1; i++) {
             int min = i;
-            for (int j = i + 1; i < elements.length; j++) {
+            for (int j = i + 1; j < elements.length; j++) {
                 count++;
                 if (elements[j] < elements[min]) {
-                    j = min;
+                    min = j;
                 }
             }
             int temp = elements[i];
             elements[i] = elements[min];
             elements[min] = temp;
-        } 
+        }
         System.out.println("SELECTION SORT: Number of loop iterations: " + count);
         return elements;
     }
@@ -63,9 +63,9 @@ public class InsertionSort {
     public static void selectionSortWordList(ArrayList<String> words) {
         for (int i = 0; i < words.size() - 1; i++) {
             int min = i;
-            for (int j = i + 1; i < words.size(); j++) {
+            for (int j = i + 1; j < words.size(); j++) {
                 if (words.get(j).compareTo(words.get(min)) < 0) {
-                    j = min;
+                    min = j;
                 }
             }
             String temp = words.get(i);
